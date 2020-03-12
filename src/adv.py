@@ -1,4 +1,5 @@
 from room import Room
+from player import Player
 
 # Declare all the rooms
 
@@ -38,6 +39,19 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
+
+player = Player(input('What is your name?'), room['outside'])
+
+print(f'Hello {player.name}!\n')
+print(f'{player.current_room}')
+
+while True:
+    cmd = input('>>').lower()
+
+    if len(cmd) <= 1 and cmd in ['n', 's', 'e', 'w']:
+
+    elif cmd > 1 and cmd == 'help':
+        print('Please type a cardinal direction "N, S, E, W" to move.')
 
 # Write a loop that:
 #
